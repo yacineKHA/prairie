@@ -1,0 +1,29 @@
+name: Deploy MkDocs to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: linux
+    
+    steps:
+      - name: Checkout du repository
+        uses: actions/checkout@v4
+
+      - name: Configuration de Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Installation des dépendances
+        run: |
+          pip install mkdocs
+
+      - name: Déploiement sur GitHub Pages
+        run: mkdocs gh-deploy --force
