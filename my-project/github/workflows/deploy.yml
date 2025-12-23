@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   deploy:
-    runs-on: linux
+    runs-on: ubuntu-latest
     
     steps:
       - name: Checkout du repository
