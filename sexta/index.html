@@ -7,14 +7,14 @@
         
         
         
-        <link rel="shortcut icon" href="/img/favicon.ico">
-        <title>My Documentation</title>
-        <link href="/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/css/fontawesome.min.css" rel="stylesheet">
-        <link href="/css/brands.min.css" rel="stylesheet">
-        <link href="/css/solid.min.css" rel="stylesheet">
-        <link href="/css/v4-font-face.min.css" rel="stylesheet">
-        <link href="/css/base.css" rel="stylesheet">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Sexta - My Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
         <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
         <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -24,7 +24,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="/.">My Documentation</a>
+                <a class="navbar-brand" href="..">My Documentation</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -35,16 +35,16 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="nav-item">
-                                <a href="/." class="nav-link">Welcome to MkDocs</a>
+                                <a href=".." class="nav-link">Welcome to MkDocs</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/sexta/" class="nav-link">Sexta</a>
+                                <a href="./" class="nav-link active" aria-current="page">Sexta</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/tertia/" class="nav-link">Tertia</a>
+                                <a href="../tertia/" class="nav-link">Tertia</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/verification/" class="nav-link">Verification</a>
+                                <a href="../verification/" class="nav-link">Verification</a>
                             </li>
                         </ul>
 
@@ -54,6 +54,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../tertia/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -61,15 +71,48 @@
 
         <div class="container">
             <div class="row">
-
-    <div class="row-fluid">
-      <div id="main-content" class="span12">
-        <h1 id="404-page-not-found" style="text-align: center">404</h1>
-        <p style="text-align: center"><strong>Page not found</strong></p>
-      </div>
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
     </div>
 
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            
+            
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
 
+<h3 id="scenario-nominal-1">Scénario nominal 1</h3>
+<ol>
+<li>L'utilisateur clique sur le bouon +</li>
+<li>Le système crée une nouvelle note avec ID</li>
+<li>Le système ajoute la note au tableau de notes déjà existant</li>
+<li>Le système génère une card</li>
+<li>La card est ajoutée à "Calepin"</li>
+</ol>
+<h3 id="scenario-nominal-2">Scénario nominal 2</h3>
+<ol>
+<li>Le user saisit du texte dans le champ de la note</li>
+<li>Il clique sur le bouton pour valider</li>
+<li>Le système récup la note et le texte saisi</li>
+<li>Le système met à jour le contenu de la note</li>
+<li>Le système change la card</li>
+<li>Le système affiche le contenu</li>
+<li>Le titre de la note devient vert</li>
+</ol>
+<h3 id="interventions-pour-moderniser-le-code">Interventions pour moderniser le code</h3>
+<ul>
+<li>Respect plus stricte du MVC</li>
+<li>Ajouter persistence des données (comme localStorage)</li>
+<li>Utilisation de var au lieu de const/let</li>
+</ul></div>
             </div>
         </div>
 
@@ -77,13 +120,13 @@
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="/js/bootstrap.bundle.min.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
         <script>
-            var base_url = "/",
+            var base_url = "..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="/js/base.js"></script>
-        <script src="/search/main.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

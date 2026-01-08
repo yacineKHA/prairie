@@ -38,6 +38,12 @@
                                 <a href=".." class="nav-link">Welcome to MkDocs</a>
                             </li>
                             <li class="nav-item">
+                                <a href="../sexta/" class="nav-link">Sexta</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../tertia/" class="nav-link">Tertia</a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="./" class="nav-link active" aria-current="page">Verification</a>
                             </li>
                         </ul>
@@ -49,7 +55,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href=".." class="nav-link">
+                                <a rel="prev" href="../tertia/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -76,19 +82,34 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
+            <li class="nav-item" data-bs-level="2"><a href="#fonctionnement" class="nav-link">Fonctionnement</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
-            
+            <li class="nav-item" data-bs-level="2"><a href="#utilisation" class="nav-link">Utilisation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h3 id="verification-des-installations">Verification des installations</h3>
-<p>Permet de vérifier si les python, node, firefox sont bien installés.</p>
-<h3 id="execution">Execution</h3>
-<p>./verif.sh</p>
+<h2 id="fonctionnement">Fonctionnement</h2>
+<p>La commande <code>command -v</code> recherche l'exécutable dans le <code>PATH</code> système :</p>
+<ul>
+<li>Si l'outil est trouvé, elle retourne son chemin et le code de sortie <code>0</code> (succès)</li>
+<li>L'opérateur <code>&amp;&amp;</code> exécute alors le <code>echo</code> pour afficher le message de confirmation</li>
+<li>Si l'outil n'est pas trouvé, rien ne s'affiche pour cette ligne</li>
+</ul>
+<h2 id="utilisation">Utilisation</h2>
+<pre><code class="language-bash">chmod +x verif.sh
+
+./verif.sh
+</code></pre>
 <h3 id="lien-github">Lien Github</h3>
-<p>[Lien vers le git(https://github.com/yacineKHA/prairie.git)]</p></div>
+<p><a href="https://github.com/yacineKHA/prairie.git">Lien vers le git</a></p></div>
             </div>
         </div>
 
