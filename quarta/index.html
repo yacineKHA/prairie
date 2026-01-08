@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Secunda - Verification - Documentation de la prairie</title>
+    <title>Quarta - Groupes - Documentation de la prairie</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Secunda - Verification";
-        var mkdocs_page_input_path = "verification.md";
+        var mkdocs_page_name = "Quarta - Groupes";
+        var mkdocs_page_input_path = "quarta.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -43,18 +43,30 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">Accueil</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">Secunda - Verification</a>
-    <ul class="current">
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../verification/">Secunda - Verification</a>
                 </li>
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../tertia/">Tertia - Http bases</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../quarta/">Quarta - Groupes</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Quarta - Groupes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#liste-des-eleves">Liste des élèves</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#taille-des-groupes">Taille des groupes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#calcul-du-nombre-de-groupes">Calcul du nombre de groupes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#initialisation-des-groupes">Initialisation des groupes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tirage-aleatoire">Tirage aléatoire</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#affectation-dans-un-groupe-aleatoire">Affectation dans un groupe aléatoire</a>
+    </li>
+    </ul>
                 </li>
               </ul>
               <ul>
@@ -91,7 +103,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Secunda - Verification</li>
+      <li class="breadcrumb-item active">Quarta - Groupes</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -100,31 +112,58 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h2 id="fonctionnement">Fonctionnement</h2>
-<p>La commande <code>command -v</code> recherche l'exécutable dans le <code>PATH</code> système :</p>
+                <h1 id="creation-de-groupes-deleves">Création de groupes d’élèves</h1>
+<p>Ce projet permet de répartir aléatoirement des élèves dans des groupes.</p>
+<h2 id="liste-des-eleves">Liste des élèves</h2>
+<pre><code class="language-python">eleves = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;]
+</code></pre>
+<hr />
+<h2 id="taille-des-groupes">Taille des groupes</h2>
+<pre><code class="language-python">k = 2
+n = len(eleves)
+</code></pre>
 <ul>
-<li>Si l'outil est trouvé, elle retourne son chemin et le code de sortie <code>0</code> (succès)</li>
-<li>L'opérateur <code>&amp;&amp;</code> exécute alors le <code>echo</code> pour afficher le message de confirmation</li>
-<li>Si l'outil n'est pas trouvé, rien ne s'affiche pour cette ligne</li>
+<li><code>k</code> : nombre maximum d’élèves par groupe</li>
+<li><code>n</code> : nombre total d’élèves</li>
 </ul>
-<h2 id="utilisation">Utilisation</h2>
-<pre><code class="language-bash">chmod +x verif.sh
+<hr />
+<h2 id="calcul-du-nombre-de-groupes">Calcul du nombre de groupes</h2>
+<pre><code class="language-python">nb_de_grp = math.ceil(n / k)
+print(&quot;nb de groupe&quot;, nb_de_grp)
+</code></pre>
+<hr />
+<h2 id="initialisation-des-groupes">Initialisation des groupes</h2>
+<pre><code class="language-python">groupes = []
 
-./verif.sh
+for i in range(nb_de_grp):
+    groupes.append([])
 </code></pre>
-<h1 id="code">Code</h1>
-<pre><code class="language-bash">command -v python3 &amp;&amp; echo Python 3 is installed
-command -v node &amp;&amp; echo Node is installed
-command -v firefox &amp;&amp; echo Firefox is installed
+<p>Chaque groupe est représenté par une liste vide.</p>
+<hr />
+<h2 id="tirage-aleatoire">Tirage aléatoire</h2>
+<pre><code class="language-python">while len(eleves) &gt; 0:
+    indice_au_hazard = random.randrange(0, len(eleves))
+    eleve = eleves[indice_au_hazard]
+    eleves.remove(eleve)
 </code></pre>
-<h3 id="lien-github">Lien Github</h3>
-<p><a href="https://github.com/yacineKHA/prairie.git">Lien vers le git</a></p>
+<p>Un élève est choisi au hasard puis retiré de la liste.</p>
+<hr />
+<h2 id="affectation-dans-un-groupe-aleatoire">Affectation dans un groupe aléatoire</h2>
+<pre><code class="language-python">groupe_hazard = random.randrange(0, nb_de_grp)
+
+while len(groupes[groupe_hazard]) == k:
+    groupe_hazard = random.randrange(0, nb_de_grp)
+
+groupes[groupe_hazard].append(eleve)
+</code></pre>
+<p>L’élève est ajouté dans un groupe non complet.</p>
+<hr />
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href=".." class="btn btn-neutral float-left" title="Accueil"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../tertia/" class="btn btn-neutral float-right" title="Tertia - Http bases">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../tertia/" class="btn btn-neutral float-left" title="Tertia - Http bases"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../quinta/" class="btn btn-neutral float-right" title="Quinta - Bdd">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -147,10 +186,10 @@ command -v firefox &amp;&amp; echo Firefox is installed
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../tertia/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../tertia/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../quinta/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

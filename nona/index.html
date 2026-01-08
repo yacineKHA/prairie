@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Nona - Strategies - Documentation de la prairie</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Nona - Strategies";
+        var mkdocs_page_input_path = "nona.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Documentation de la prairie
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Accueil</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../verification/">Secunda - Verification</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../tertia/">Tertia - Http bases</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../quarta/">Quarta - Groupes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../quinta/">Quinta - Bdd</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../sexta/">Sexta - Diagrammes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../septima/">Septima - Tinder-app</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../octavia/">OctavIA - IA</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Nona - Strategies</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-structure-du-projet">1. Structure du projet</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-la-classe-carte">2. La classe Carte</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#code">Code</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-la-classe-player">3. La classe Player</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#code_1">Code</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-la-partie-partie-partie">4. La partie partie (partie())</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#creation-de-la-pioche">Création de la pioche</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#-le-paquet-contient-10-cartes">- Le paquet contient 10 cartes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#melange-et-distribution">Mélange et distribution</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#les-tours-de-jeu">Les tours de jeu</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#attribution-des-points">Attribution des points</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#condition-de-victoire">Condition de victoire</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-simulation-de-plusieurs-parties-mainpy">5. Simulation de plusieurs parties (main.py)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#code_2">Code</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#affichage-des-resultats">Affichage des résultats</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Documentation de la prairie</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Nona - Strategies</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="simulation-de-jeu-de-cartes-bidon-humain-vs-ia">Simulation de jeu de cartes bidon – Humain vs IA</h1>
+<p>Ce projet simule un jeu de cartes entre un joueur humain et une IA.
+Le but est de lancer plusieurs parties automatiquement pour comparer
+les taux de victoire de l'ia</p>
+<hr />
+<h2 id="1-structure-du-projet">1. Structure du projet</h2>
+<p>Le projet est découpé en plusieurs fichiers :</p>
+<ul>
+<li><code>Carte.py</code> : Classe carte</li>
+<li><code>Player.py</code> : Classe joueur</li>
+<li><code>tools.py</code> : logique d’une partie</li>
+<li><code>main.py</code> : simulation de plusieurs parties et stat</li>
+</ul>
+<hr />
+<h2 id="2-la-classe-carte">2. La classe <code>Carte</code></h2>
+<p>Chaque carte possède :
+- une valeur
+- une forme</p>
+<h3 id="code">Code</h3>
+<pre><code class="language-python">class Carte:
+    def __init__(self, value: int, shape: str):
+        self.value = value
+        self.shape = shape
+
+    def __str__(self):
+        return f&quot;{self.shape} {self.value}&quot;
+</code></pre>
+<ul>
+<li><code>value</code> sert à comparer les cartes entre elles</li>
+<li><code>shape</code> est uniquement descriptive (ex: "R", "C")</li>
+<li>la méthode <code>__str__</code> elle permet juste de rendre l'affichage lisible</li>
+</ul>
+<hr />
+<h2 id="3-la-classe-player">3. La classe <code>Player</code></h2>
+<p>Un joueur possède :
+- un nom
+- et des cartes (hand)</p>
+<h3 id="code_1">Code</h3>
+<pre><code class="language-python">from Carte import Carte
+
+class Player:
+    def __init__(self, name: str):
+        self.name = name
+        self.hand = []
+
+    def __str__(self):
+        return self.name + &quot;: &quot; + &quot;, &quot; + str([str(carte) for carte in self.hand])
+
+    def play(self):
+        return self.hand.pop(-1)
+
+Création de la classe Player qui permettra de créer les joueurs IA/Humain
+</code></pre>
+<h2 id="4-la-partie-partie-partie">4. La partie partie (<code>partie()</code>)</h2>
+<p>La fonction <code>partie()</code> gère la partie.</p>
+<h3 id="creation-de-la-pioche">Création de la pioche</h3>
+<pre><code class="language-python">pioche = [
+    Carte(0,&quot;R&quot;),
+    Carte(1,&quot;R&quot;),
+    Carte(2,&quot;R&quot;),
+    Carte(3,&quot;R&quot;),
+    Carte(4,&quot;R&quot;),
+    Carte(1,&quot;C&quot;),
+    Carte(2,&quot;C&quot;),
+    Carte(3,&quot;C&quot;),
+    Carte(4,&quot;C&quot;),
+    Carte(5,&quot;C&quot;),
+]
+</code></pre>
+<h2 id="-le-paquet-contient-10-cartes">- Le paquet contient 10 cartes</h2>
+<h3 id="melange-et-distribution">Mélange et distribution</h3>
+<pre><code class="language-python">random.shuffle(pioche)
+
+human = Player(&quot;human&quot;)
+ai = Player(&quot;ai&quot;)
+
+while len(pioche) &gt; 0:
+    carte = pioche.pop(-1)
+    human.hand.append(carte)
+    carte = pioche.pop(-1)
+    ai.hand.append(carte)
+</code></pre>
+<ul>
+<li>Le paquet est mélangé aléatoirement</li>
+<li>Chaque joueur reçoit 5 cartes</li>
+</ul>
+<hr />
+<h3 id="les-tours-de-jeu">Les tours de jeu</h3>
+<pre><code class="language-python">points_human = 0
+points_ai = 0
+
+for _ in range(nb_tour):
+    carte_human = human.play()
+    carte_ai = ai.play()
+</code></pre>
+<ul>
+<li>Ils jouent une carte chacun</li>
+<li>Cartes comparées par leur valeur</li>
+</ul>
+<hr />
+<h3 id="attribution-des-points">Attribution des points</h3>
+<pre><code class="language-python">if carte_human.value &gt; carte_ai.value:
+    points_human += 1
+else:
+    points_ai += 1
+</code></pre>
+<ul>
+<li>La carte la plus forte gagne le point</li>
+<li>Si égalité, l’IA gagne le point</li>
+</ul>
+<hr />
+<h3 id="condition-de-victoire">Condition de victoire</h3>
+<pre><code class="language-python">if points_human &gt;= 3:
+    return 'human'
+elif points_ai &gt;= 3:
+    return 'ai'
+</code></pre>
+<ul>
+<li>Le premier joueur à atteindre 3 points gagne la partie</li>
+<li>La fonction retourne le nom du gagnant</li>
+</ul>
+<hr />
+<h2 id="5-simulation-de-plusieurs-parties-mainpy">5. Simulation de plusieurs parties (<code>main.py</code>)</h2>
+<p>Le fichier principal sert à mesurer les perf
+sur un grand nombre de parties.</p>
+<h3 id="code_2">Code</h3>
+<pre><code class="language-python">victoire_ai = 0
+victoire_human = 0
+
+nombre_tour = 1000
+for _ in range(nombre_tour):
+    gagnant = partie()
+    if gagnant == 'ai':
+        victoire_ai += 1
+    else:
+        victoire_human += 1
+</code></pre>
+<hr />
+<h3 id="affichage-des-resultats">Affichage des résultats</h3>
+<pre><code class="language-python">print(f&quot;L'IA a gagné {victoire_ai} parties&quot;)
+print(f&quot;L'humain a gagné {victoire_human} parties&quot;)
+print(&quot;Pourcentage victoire AI :&quot;, victoire_ai / nombre_tour * 100)
+</code></pre>
+<ul>
+<li>Le nombre total de victoires est affiché</li>
+<li>Le pourcentage de victoire de l’IA est calculé</li>
+</ul>
+<hr />
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../octavia/" class="btn btn-neutral float-left" title="OctavIA - IA"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../octavia/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
