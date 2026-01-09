@@ -74,7 +74,7 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Nona - Strategies</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#1-structure-du-projet">1. Structure du projet</a>
+    <li class="toctree-l2"><a class="reference internal" href="#1-structure">1. Structure</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#2-la-classe-carte">2. La classe Carte</a>
         <ul>
@@ -96,7 +96,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#-le-paquet-contient-10-cartes">- Le paquet contient 10 cartes</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#melange-et-distribution">Mélange et distribution</a>
+    <li class="toctree-l3"><a class="reference internal" href="#melange-et-distrib-des-cartes">Mélange et distrib des cartes</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#les-tours-de-jeu">Les tours de jeu</a>
     </li>
@@ -106,7 +106,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#5-simulation-de-plusieurs-parties-mainpy">5. Simulation de plusieurs parties (main.py)</a>
+    <li class="toctree-l2"><a class="reference internal" href="#5-generation-de-parties-dans-le-mainpy">5. Génération de parties dans le main.py</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#code_2">Code</a>
     </li>
@@ -145,8 +145,7 @@
 Le but est de lancer plusieurs parties automatiquement pour comparer
 les taux de victoire de l'ia</p>
 <hr />
-<h2 id="1-structure-du-projet">1. Structure du projet</h2>
-<p>Le projet est découpé en plusieurs fichiers :</p>
+<h2 id="1-structure">1. Structure</h2>
 <ul>
 <li><code>Carte.py</code> : Classe carte</li>
 <li><code>Player.py</code> : Classe joueur</li>
@@ -168,8 +167,8 @@ les taux de victoire de l'ia</p>
         return f&quot;{self.shape} {self.value}&quot;
 </code></pre>
 <ul>
-<li><code>value</code> sert à comparer les cartes entre elles</li>
-<li><code>shape</code> est uniquement descriptive (ex: "R", "C")</li>
+<li><code>value</code> valeur de la carte qu'on va comparer</li>
+<li><code>shape</code> (ex: "R", "C")</li>
 <li>la méthode <code>__str__</code> elle permet juste de rendre l'affichage lisible</li>
 </ul>
 <hr />
@@ -210,7 +209,7 @@ Création de la classe Player qui permettra de créer les joueurs IA/Humain
 ]
 </code></pre>
 <h2 id="-le-paquet-contient-10-cartes">- Le paquet contient 10 cartes</h2>
-<h3 id="melange-et-distribution">Mélange et distribution</h3>
+<h3 id="melange-et-distrib-des-cartes">Mélange et distrib des cartes</h3>
 <pre><code class="language-python">random.shuffle(pioche)
 
 human = Player(&quot;human&quot;)
@@ -262,7 +261,7 @@ elif points_ai &gt;= 3:
 <li>La fonction retourne le nom du gagnant</li>
 </ul>
 <hr />
-<h2 id="5-simulation-de-plusieurs-parties-mainpy">5. Simulation de plusieurs parties (<code>main.py</code>)</h2>
+<h2 id="5-generation-de-parties-dans-le-mainpy">5. Génération de parties dans le <code>main.py</code></h2>
 <p>Le fichier principal sert à mesurer les perf
 sur un grand nombre de parties.</p>
 <h3 id="code_2">Code</h3>
